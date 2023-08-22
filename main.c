@@ -3,11 +3,11 @@
 /**
  * main - print x
  * Return: return the value
-*/
+ */
 
 int main(void)
 {
-int x = _printf("naol %%");
-printf("%d", x);
-return (0);
+    int x = _printf("naol %d",10);
+    printf("%d", x);
+    return (0);
 }

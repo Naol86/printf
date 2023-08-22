@@ -4,7 +4,7 @@
  * _printf - printf file
  * @format: char
  *Return: return the expected value
-*/
+ */
 
 int _printf(const char *format, ...)
 {
