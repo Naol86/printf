@@ -21,7 +21,6 @@ for (i = 0; format[i] != '\0'; i++)
 if (format[i] != '%')
 {
 _putchar(format[i]);
-count += 1;
 }
 
 else if (format[i] == '%' && format[i + 1] == 'c')
@@ -33,7 +32,7 @@ i++;
 else if (format[i + 1] == 's')
 {
 s_len = len(va_arg(list, char *));
-count += s_len;
+count += (s_len - 1);
 i++;
 }
 
@@ -42,6 +41,7 @@ else if (format[i + 1] == '%')
 _putchar('%');
 i++;
 }
+count += 1;
 va_end(list);
 }
 
