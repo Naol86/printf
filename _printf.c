@@ -11,8 +11,7 @@ int _printf(const char *format, ...)
 
 unsigned int i, s_len;
 unsigned int count = 0;
-if (format == NULL)
-return (-1);
+
 va_list list;
 
 va_start(list, format);
