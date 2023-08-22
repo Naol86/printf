@@ -1,48 +1,47 @@
 #include "main.h"
-
 /**
- * _printf - printf file
- * @format: char
- * Return: return the expected value
+ * _printf - printf function by my self
+ * @format: char type
+ * Return: int
  */
 
 int _printf(const char *format, ...)
 {
-
-unsigned int i, s_len;
-unsigned int count = 0;
-
+unsigned int i, j, count = 0;
+char *str;
+char c;
 va_list list;
-
 va_start(list, format);
-
+if (format == NULL)
+return (-1);
 for (i = 0; format[i] != '\0'; i++)
 {
-
-count += 1;
-if (format[i] != '%')
-_putchar(format[i]);
-
-else if (format[i + 1] == 'c')
+if (format[i] == '%')
 {
-_putchar(va_arg(list, int));
 i++;
+switch (format[i])
+{
+case 'c':
+c = (char)va_arg(list, int);
+count += _putchar(c);
+break;
+case 's':
+str = va_arg(list, char *);
+for (j = 0; str[j] != '\0'; j++)
+count += _putchar(str[j]);
+break;
+case '%':
+count += _putchar('%');
+break;
+default:
+break;
 }
-
-else if (format[i + 1] == 's')
-{
-s_len = len(va_arg(list, char *));
-count += (s_len - 1);
-i++;
 }
-
-else if (format[i + 1] == '%')
+else
 {
-_putchar('%');
-i++;
+count += _putchar(format[i]);
 }
 }
 va_end(list);
-
 return (count);
 }
