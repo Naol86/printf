@@ -6,8 +6,8 @@
 #include <stdlib.h>
 
 
-int len(char* c);
+int len(char *c);
 int _putchar(char c);
 int _printf(const char *format, ...);
 
-#endif
+#endif /* MAIN_H */
