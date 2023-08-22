@@ -7,7 +7,7 @@
 
 int main(void)
 {
-    int x = _printf("naol %c\n",'k');
+    int x = _printf("naol %X\n",123);
     printf("%d", x);
     return (0);
 }
