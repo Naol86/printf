@@ -12,6 +12,7 @@ int _putchar(char c);
 int _printf(const char *format, ...);
 unsigned int power(unsigned int x);
 unsigned int print_int(long int num);
+unsigned int print_binary(unsigned int num, unsigned int count);
 
 
 #endif /* MAIN_H */

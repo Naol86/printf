@@ -10,7 +10,6 @@ int _printf(const char *format, ...)
 {
 unsigned int i, j, count = 0;
 char *str;
-char c;
 va_list list;
 va_start(list, format);
 if (format == NULL)
@@ -23,8 +22,7 @@ i++;
 switch (format[i])
 {
 case 'c':
-c = (char)va_arg(list, int);
-count += _putchar(c);
+count += _putchar(va_arg(list, int));
 break;
 case 's':
 str = va_arg(list, char *);
@@ -37,6 +35,9 @@ break;
 case 'd':
 case 'i':
 count += print_int(va_arg(list, int));
+break;
+case 'b':
+count += print_binary(va_arg(list, int), 0);
 break;
 default:
 break;
