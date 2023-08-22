@@ -42,8 +42,8 @@ else if (format[i + 1] == '%')
 _putchar('%');
 i++;
 }
-va_end(list);
 }
+va_end(list);
 
 return (count);
 }
