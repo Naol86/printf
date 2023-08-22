@@ -1,4 +1,5 @@
 #include "main.h"
+
 /**
  * _printf - printf function by my self
  * @format: char type
@@ -33,14 +34,16 @@ break;
 case '%':
 count += _putchar('%');
 break;
+case 'd':
+case 'i':
+count += print_int(va_arg(list, int));
+break;
 default:
 break;
 }
 }
 else
-{
 count += _putchar(format[i]);
-}
 }
 va_end(list);
 return (count);
