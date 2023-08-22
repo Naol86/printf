@@ -3,7 +3,7 @@
 /**
  * _printf - printf file
  * @format: char
- *Return: return the expected value
+ * Return: return the expected value
  */
 
 int _printf(const char *format, ...)
@@ -18,12 +18,12 @@ va_start(list, format);
 
 for (i = 0; format[i] != '\0'; i++)
 {
-if (format[i] != '%')
-{
-_putchar(format[i]);
-}
 
-else if (format[i] == '%' && format[i + 1] == 'c')
+count += 1;
+if (format[i] != '%')
+_putchar(format[i]);
+
+else if (format[i + 1] == 'c')
 {
 _putchar(va_arg(list, int));
 i++;
@@ -41,7 +41,6 @@ else if (format[i + 1] == '%')
 _putchar('%');
 i++;
 }
-count += 1;
 va_end(list);
 }
 
